@@ -4,7 +4,7 @@
  * Created: 19.03.2019 08.58.18
  * Author : Oskar J Martinsen
  */ 
-
+//Endring i filen hehe
 #include <avr/io.h>
 #include "USART.h"
 
@@ -17,13 +17,17 @@
 void SPI_SLAVE_INIT(void)
 {
 	DDR_SPI=(1<<DD_MISO); //Pull-up on DDB4
-	SPCR = (1<<SPE); //Pull-up on SPE}char SPI_SlaveReceive(void)
+	SPCR = (1<<SPE); //Pull-up on SPE
+}
+
+char SPI_SlaveReceive(void)
 {
 	//SPDR= data;
 	while(!(SPSR & (1<<SPIF)));
 	;
 	/* Return Data Register */
-	return SPDR;}
+	return SPDR;
+}
 
 int main(void)
 {
